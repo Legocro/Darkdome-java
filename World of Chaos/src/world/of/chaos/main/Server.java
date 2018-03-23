@@ -12,7 +12,7 @@ import org.apache.mina.transport.socket.nio.SocketAcceptor;
 import org.apache.mina.transport.socket.nio.SocketAcceptorConfig;
 
 import world.of.chaos.net.ConnectionHandler;
-import world.of.chaos.net.ConnectionThrottleFilter
+import world.of.chaos.net.ConnectionThrottleFilter;
 import world.of.chaos.npcs.NpcHandler;
 import world.of.chaos.Player.Client;
 import world.of.chaos.Player.Player;
