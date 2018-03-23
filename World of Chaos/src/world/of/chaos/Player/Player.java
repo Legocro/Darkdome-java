@@ -5,9 +5,50 @@ package world.of.chaos.Player;
  * @author Loki
  */
 import java.util.ArrayList;
-public abstract class Player {
-    public double weight = 0.0;
 
+import world.of.chaos.main.Constants;
+import world.of.chaos.npcs.Npc;
+import world.of.chaos.util.Stream;
+import world.of.chaos.util.Misc;
+import world.of.chaos.util.ISAACRandomGen;
+
+public abstract class Player {
+    
+    public boolean initialized = false, musicOn = true, luthas,
+			playerIsCooking, disconnected = false, ruleAgreeButton = false,
+			RebuildNPCList = false, isActive = false, isKicked = false,
+			isSkulled = false, friendUpdate = false, newPlayer = false,
+			hasMultiSign = false, saveCharacter = false, mouseButton = false,
+			chatEffects = true, acceptAid = false, recievedMask,
+			nextDialogue = false, autocasting = false, usedSpecial = false,
+			mageFollow = false, dbowSpec = false, craftingLeather = false,
+			properLogout = false, secDbow = false, maxNextHit = false,
+			ssSpec = false, vengOn = false, addStarter = false,
+			accountFlagged = false, inPartyRoom = false, msbSpec = false,
+			hasBankPin, enterdBankpin, firstPinEnter, requestPinDelete,
+			secondPinEnter, thirdPinEnter, fourthPinEnter, hasBankpin,
+			isBanking, isTeleporting = false, desertWarning,
+			isPotionMaking = false, isGrinding = false, hasStarter, isSpinning,
+			clickedSpinning, hasPaidBrim, isHerblore, herbloreI, secondHerb,
+			playerStun, playerFletch, isWoodcutting, playerIsFiremaking,
+			hasNpc = false, playerIsFishing = false, isOperate, below459 = true,
+			splitChat, strongHold, village, needsNewTask = false,
+			canSpeak = true, ignoreFrog, ratdied2 = false,
+			fishingWhirlPool, lostDuel, diedOnTut = false, storing = false, rope, rope2,
+			canWalkTutorial, closeTutorialInterface, isCrafting, showedUnfire,
+			showedFire, isPotCrafting, isFiremaking, playerIsFletching, milking,
+			stopPlayerPacket, spiritTree = false, isSmelting,
+			hasPaifAnTeleport = false, isSmithing, doingAgility = false,
+			hasPaid, canTeleport, magicCharge, isBanned = false, fletchNerfed,
+			clickedVamp = false, allowFading, isBotting = false, otherBank = false,
+			recievedReward = false, poison, golemSpawned = false, zombieSpawned = false, shadeSpawned = false,
+			treeSpiritSpawned = false, chickenSpawned = false, clickedTree = false, filter = true,
+			stopPlayer = false, npcCanAttack = true, gliderOpen = false, hasSandwhichLady = false,
+			isHarvesting, openDuel = false,  killedJad = false, canHealersRespawn = true, playerIsBusy = false, miningRock;
+
+    public double weight = 0.0;
+    public boolean appearanceUpdateRequired = true;
+    
     public int getLocalX() {
 		return getX() - 8 * getMapRegionX();
     }
@@ -22,7 +63,8 @@ public abstract class Player {
     private Player player;
     public Player asPlayer() {
        return (Player) player;
-       
+    }
+    
     public int playerId = -1;
 	public String playerName = null;
     
@@ -76,11 +118,13 @@ public abstract class Player {
                 playerEquipment[playerLeftBracelet] = -1;
 		playerEquipment[playerArrows] = -1;
             
-            heightLevel = 0;
+                heightLevel = 0;
             
-            absX = absY = -1;
+                absX = absY = -1;
 		mapRegionX = mapRegionY = -1;
 		currentX = currentY = 0;
+                }
+    }
                 
         public boolean withinDistance(Player otherPlr) {
 		if (heightLevel != otherPlr.heightLevel) {
@@ -183,5 +227,31 @@ public abstract class Player {
 		}
 		return false;
 	}
-       
+        public void setAppearanceUpdateRequired(boolean appearanceUpdateRequired) {
+		this.appearanceUpdateRequired = appearanceUpdateRequired;
+	}
+        public int getMapRegionX() {
+		return mapRegionX;
+	}
+
+	public int getMapRegionY() {
+		return mapRegionY;
+	}
+
+	public int getX() {
+		return absX;
+	}
+
+	public int getY() {
+		return absY;
+	}
+
+	public int getH() {
+		return heightLevel;
+	}
+
+	public int getId() {
+		return playerId;
+	}
+
 }
