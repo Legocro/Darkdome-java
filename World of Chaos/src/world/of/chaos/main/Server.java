@@ -11,6 +11,24 @@ import org.apache.mina.common.IoAcceptor;
 import org.apache.mina.transport.socket.nio.SocketAcceptor;
 import org.apache.mina.transport.socket.nio.SocketAcceptorConfig;
 
+
+
+import redone.game.content.minigames.FightCaves;
+import redone.game.content.minigames.FightPits;
+import redone.game.content.minigames.PestControl;
+import redone.game.content.minigames.castlewars.CastleWars;
+import redone.game.content.minigames.trawler.Trawler;
+import redone.game.globalworldobjects.Doors;
+import redone.game.globalworldobjects.DoubleDoors;
+import redone.game.items.ItemDefinitions;
+import redone.game.shops.ShopHandler;
+import redone.util.HostBlacklist;
+import redone.world.ClanChatHandler;
+import redone.world.GlobalDropsHandler;
+
+import world.of.chaos.event.TaskScheduler;
+import world.of.chaos.event.CycleEventHandler;
+import world.of.chaos.world.ItemHandler;
 import world.of.chaos.net.ConnectionHandler;
 import world.of.chaos.net.ConnectionThrottleFilter;
 import world.of.chaos.npcs.NpcHandler;
@@ -18,6 +36,11 @@ import world.of.chaos.Player.Client;
 import world.of.chaos.Player.Player;
 import world.of.chaos.Player.PlayerHandler;
 import world.of.chaos.Player.PlayerSave;
+import world.of.chaos.world.ItemHandler;
+import world.of.chaos.world.ObjectManager;
+import world.of.chaos.world.ObjectHandler;
+import world.of.chaos.world.clip.ObjectDef;
+import world.of.chaos.world.clip.Region;
 
 public class Server {
 
