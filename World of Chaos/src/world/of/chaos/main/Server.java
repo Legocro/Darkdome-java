@@ -20,15 +20,16 @@ import redone.game.content.minigames.castlewars.CastleWars;
 import redone.game.content.minigames.trawler.Trawler;
 import redone.game.globalworldobjects.Doors;
 import redone.game.globalworldobjects.DoubleDoors;
-import redone.game.items.ItemDefinitions;
-import redone.game.shops.ShopHandler;
+
 import redone.util.HostBlacklist;
 import redone.world.ClanChatHandler;
-import redone.world.GlobalDropsHandler;
 
+import world.of.chaos.shops.ShopHandler;
 import world.of.chaos.event.TaskScheduler;
 import world.of.chaos.event.CycleEventHandler;
+import world.of.chaos.items.ItemDefinitions;
 import world.of.chaos.world.ItemHandler;
+import world.of.chaos.world.GlobalDropsHandler;
 import world.of.chaos.net.ConnectionHandler;
 import world.of.chaos.net.ConnectionThrottleFilter;
 import world.of.chaos.npcs.NpcHandler;
