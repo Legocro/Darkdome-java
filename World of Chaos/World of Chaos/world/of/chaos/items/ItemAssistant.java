@@ -7,8 +7,7 @@ package world.of.chaos.items;
 
 import world.of.chaos.main.Constants;
 import world.of.chaos.main.Server;
-import redone.game.content.minigames.castlewars.CastleWars;
-import redone.game.items.impl.Weight;
+import world.of.chaos.items.impl.Weight;
 import world.of.chaos.npcs.NpcHandler;
 import world.of.chaos.player.Client;
 import world.of.chaos.player.PlayerHandler;
